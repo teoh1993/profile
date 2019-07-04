@@ -80,7 +80,7 @@
             margin:0%; 
             color:white;
             text-align: center;
-            font-size: 70px;
+            font-size: 80px;
         }
         .JustName{
             background: #A52A2A; 
@@ -108,8 +108,9 @@
 
         <!-- ######################################################################### -->
         <div class="leaving">
-            <b>
+            <b style="padding:0%; margin:0%;">
                 2019 END IN
+                <div style="background:white; height:7px; padding:0%; margin:0% 20% 6% 20%;"></div>
                 <div id="countdownLeaving"></div>
             </b>
         </div>
@@ -137,10 +138,10 @@
                     var hours = Math.floor((distance % _day) / _hour);
                     var minutes = Math.floor((distance % _hour) / _minute);
                     var seconds = Math.floor((distance % _minute) / _second);
-                    document.getElementById(id).innerHTML = days + 'days ';
-                    document.getElementById(id).innerHTML += hours + 'hrs ';
-                    document.getElementById(id).innerHTML += minutes + 'mins ';
-                    document.getElementById(id).innerHTML += seconds + 'secs';
+                    document.getElementById(id).innerHTML = days + 'days <br>';
+                    document.getElementById(id).innerHTML += hours + ' hrs ';
+                    document.getElementById(id).innerHTML += minutes + ' mins ';
+                    document.getElementById(id).innerHTML += seconds + ' secs';
                 }
                 timer = setInterval(showRemaining, 1000);
             }
