@@ -39,7 +39,8 @@
             margin:0%; 
             color:white;
             text-align: center;
-            font-size: 70px;
+            /*font-size: 70px;*/
+            font-size:8.0vw;
         }
         #top-ys{
         	color:white;
@@ -80,15 +81,17 @@
             margin:0%; 
             color:white;
             text-align: center;
-            font-size: 80px;
+            /*font-size: 80px;*/
+            font-size:8.0vw;
         }
         .JustName{
             background: #A52A2A; 
             margin:0%; 
-            padding: 16% 2%; 
+            padding: 4% 2%; 
             color:white;
             text-align: center;
-            font-size:9.5vw;
+            /*font-size: 80px;*/
+            font-size:8.0vw;
         }
     	</style>
     </head>
@@ -109,7 +112,7 @@
         <!-- ######################################################################### -->
         <div class="countMarathon">
             <b style="padding:0%; margin:0%;">
-                # Marathon CountDown #
+                Marathon CountDown
                 <div style="height:4px; padding:0%; margin:0% 20% 1% 20%;"></div>
                 <div id="countDownMarathon"></div>
             </b>
@@ -181,13 +184,57 @@
                     var minutes = Math.floor((distance % _hour) / _minute);
                     var seconds = Math.floor((distance % _minute) / _second);
                     document.getElementById(id).innerHTML = days + 'days <br>';
-                    document.getElementById(id).innerHTML += hours + ' hrs ';
-                    document.getElementById(id).innerHTML += minutes + ' mins ';
-                    document.getElementById(id).innerHTML += seconds + ' secs';
+                    // document.getElementById(id).innerHTML += hours + ' hrs ';
+                    // document.getElementById(id).innerHTML += minutes + ' mins ';
+                    // document.getElementById(id).innerHTML += seconds + ' secs';
                 }
                 timer = setInterval(showRemaining, 1000);
             }
         </script>
+
+
+
+        <!-- ######################################################################### -->
+        <div class="JustName">
+            <b style="padding:0%; margin:0%;">
+                Growing_Up
+                <div style="height:4px; padding:0%; margin:0% 20% 1% 20%;"></div>
+                <div id="countDownEP"></div>
+            </b>
+        </div>
+        <!--<div id="newcountdown"></div>-->
+        <script>
+            leave('01/31/2020 00:00 AM', 'countDownEP');
+            //CountDownTimer('02/20/2017 10:1 AM', 'newcountdown');
+            function leave(dt, id)
+            {
+                var end = new Date(dt);
+                var _second = 1000;
+                var _minute = _second * 60;
+                var _hour = _minute * 60;
+                var _day = _hour * 24;
+                var timer;
+                function showRemaining() {
+                    var now = new Date();
+                    var distance = end - now;
+                    if (distance < 0) {
+                        clearInterval(timer);
+                        document.getElementById(id).innerHTML = 'EXPIRED!';
+                        return;
+                    }
+                    var days = Math.floor(distance / _day);
+                    var hours = Math.floor((distance % _day) / _hour);
+                    var minutes = Math.floor((distance % _hour) / _minute);
+                    var seconds = Math.floor((distance % _minute) / _second);
+                    document.getElementById(id).innerHTML = days + 'days <br>';
+                    // document.getElementById(id).innerHTML += hours + ' hrs ';
+                    // document.getElementById(id).innerHTML += minutes + ' mins ';
+                    // document.getElementById(id).innerHTML += seconds + ' secs';
+                }
+                timer = setInterval(showRemaining, 1000);
+            }
+        </script>
+
 
         <!--
         <div class="container-fluid" style="color:white;">
